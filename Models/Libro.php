@@ -22,7 +22,31 @@ class Libro
         return  $rs;
     }
 
-    function  create()
+    public function autores()
+    {
+        $query = "SELECT id, nombre_autor as autor from autores";
+
+        $stm = $this->conexion->prepare($query);
+
+        $stm->execute();
+        $rs = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+        return  $rs;
+    }
+
+    public function generos()
+    {
+        $query = "SELECT * FROM generos";
+
+        $stm = $this->conexion->prepare($query);
+        $stm->execute();
+        $rs = $stm->fetchAll(PDO::FETCH_ASSOC);
+
+        return  $rs;
+    }
+
+
+    function  create($titulo, $autor_id, $genero_id, $stock)
     {
 
         $query  = 'INSERT INTO libros (`titulo`, `autor_id`, `genero_id`, `stock`) VALUES (?,?,?,?)';
@@ -31,10 +55,9 @@ class Libro
         try {
 
             $stm = $this->conexion->prepare($query);
-            $stm->execute();
+            $stm->execute([$titulo, $autor_id, $genero_id, $stock]);
         } catch (mysqli_sql_exception $e) {
             echo $e->getMessage();
         }
     }
 }
- 

@@ -78,7 +78,7 @@ if (isset($_SESSION['libros'])) {
         </tbody>
     </table>
 
-    <a href="#" class="nuevo-libro-btn">Nuevo Libro</a>
+    <a href="../index.php?action=create&controller=LibroController" class="nuevo-libro-btn">Nuevo Libro</a>
 
 </body>
 
