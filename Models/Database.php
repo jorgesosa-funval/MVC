@@ -16,7 +16,7 @@ class Database
         $this->password = PASSWORD;
         $this->dbname = DB_NAME;
 
-        $this->conn = new mysqli($this->hostname, $this->username, $this->password, $this->dbname);
+        $this->conn = new PDO("mysql:host=$this->hostname;dbname=$this->dbname", $this->username, $this->password);
     }
 
 
@@ -27,6 +27,6 @@ class Database
 
     function closeConn()
     {
-        $this->conn->close();
+        $this->conn = null;
     }
 }
