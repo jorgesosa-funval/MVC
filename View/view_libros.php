@@ -1,14 +1,16 @@
-<?php 
+<?php
 
-    session_start();
-    if(isset($_SESSION['libros'])){
-        $libros = $_SESSION['libros'];
-    }
+session_start();
+if (isset($_SESSION['libros'])) {
+    $libros = $_SESSION['libros'];
+ 
+}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +28,8 @@
             margin-top: 20px;
         }
 
-        th, td {
+        th,
+        td {
             padding: 12px;
             text-align: left;
             border-bottom: 1px solid #ddd;
@@ -49,6 +52,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <h2>Lista de Libros</h2>
@@ -63,18 +67,19 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($libros as $libro):?>
-            <tr>
-                <td><?= $libros['id']?></td>
-                <td><?= $libros['titulo']?></td>
-                <td><?= $libros['stock']?></td>
-                <td><?= $libros['autor']?></td>
-            </tr>
-            <?php endforeach;?>
+            <?php foreach ($libros as $libro) : ?>
+                <tr>
+                    <td><?= $libro['id'] ?></td>
+                    <td><?= $libro['titulo'] ?></td>
+                    <td><?= $libro['stock'] ?></td>
+                    <td><?= $libro['autor'] ?></td>
+                </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 
     <a href="#" class="nuevo-libro-btn">Nuevo Libro</a>
 
 </body>
+
 </html>

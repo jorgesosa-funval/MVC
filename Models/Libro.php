@@ -1,5 +1,5 @@
 <?php
-require_once './Database.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Models/Database.php';
 class Libro
 {
     private $conexion;
@@ -37,8 +37,4 @@ class Libro
         }
     }
 }
-
-
-$libro = new Libro();
-
-print_r($libro->all());
+ 
