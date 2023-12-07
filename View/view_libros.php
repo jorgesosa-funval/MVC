@@ -1,3 +1,12 @@
+<?php 
+
+    session_start();
+    if(isset($_SESSION['libros'])){
+        $libros = $_SESSION['libros'];
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -54,24 +63,14 @@
             </tr>
         </thead>
         <tbody>
+            <?php foreach ($libros as $libro):?>
             <tr>
-                <td>1</td>
-                <td>El señor de los anillos</td>
-                <td>10</td>
-                <td>J.R.R. Tolkien</td>
+                <td><?= $libros['id']?></td>
+                <td><?= $libros['titulo']?></td>
+                <td><?= $libros['stock']?></td>
+                <td><?= $libros['autor']?></td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Cien años de soledad</td>
-                <td>5</td>
-                <td>Gabriel García Márquez</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Harry Potter y la piedra filosofal</td>
-                <td>8</td>
-                <td>J.K. Rowling</td>
-            </tr>
+            <?php endforeach;?>
         </tbody>
     </table>
 

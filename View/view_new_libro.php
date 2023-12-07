@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Nuevo Libro</title>
-    <style>
+    
+</head>
+<style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -56,8 +58,6 @@
             margin-right: 10px;
         }
     </style>
-</head>
-
 <body>
 
     <h2>Nuevo Libro</h2>
@@ -73,7 +73,7 @@
             <option value="J.R.R. Tolkien">J.R.R. Tolkien</option>
             <option value="Gabriel García Márquez">Gabriel García Márquez</option>
             <option value="J.K. Rowling">J.K. Rowling</option>
-            <!-- Agrega más opciones según necesites -->
+            
         </select>
 
         <label for="genero">Género:</label>
@@ -81,7 +81,7 @@
             <option value="Fantasía">Fantasía</option>
             <option value="Realismo Mágico">Realismo Mágico</option>
             <option value="Ficción">Ficción</option>
-            <!-- Agrega más opciones según necesites -->
+ 
         </select>
 
         <label for="stock">Stock:</label>
